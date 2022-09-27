@@ -71,8 +71,10 @@ namespace DatabaseSQLParser_WinForm
                     }
                     richTextBox1.Text = richTextBox1.Text + insertQuery;
                     File.WriteAllText(SqlFile(item.ToString()), insertQuery);
-                    richTextBox1.Text = richTextBox1.Text + "\r \n" + "Write was successful";
-
+                    richTextBox1.Text = richTextBox1.Text + "\r \n" + "Write was successful" + "\r \n"+drive;
+                    //igen
+                    //nem
+                    
                 }
             }
         }
