@@ -5,7 +5,6 @@ namespace DatabaseSQLParser_WinForm
     
     public partial class Form1 : Form
     {
-        public static string drive;
         public Form1()
         {
             InitializeComponent();
@@ -71,9 +70,7 @@ namespace DatabaseSQLParser_WinForm
                     }
                     richTextBox1.Text = richTextBox1.Text + insertQuery;
                     File.WriteAllText(SqlFile(item.ToString()), insertQuery);
-                    richTextBox1.Text = richTextBox1.Text + "\r \n" + "Write was successful" + "\r \n"+drive;
-                    //igen
-                    //nem
+                    richTextBox1.Text = richTextBox1.Text + "\r \n" + "Write was successful";
                     
                 }
             }
@@ -128,23 +125,21 @@ namespace DatabaseSQLParser_WinForm
 
             SQL();
 
-            try
-            {
-                StreamWriter sw = new StreamWriter(SavedTextFile);
-                sw.WriteLine(comboBox1.Text);
-                sw.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception: " + ex.Message);
-            }
+            //try
+            //{
+            //    StreamWriter sw = new StreamWriter(SavedTextFile);
+            //    sw.WriteLine(comboBox1.Text);
+            //    sw.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("Exception: " + ex.Message);
+            //}
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DriveSelection d2 = new DriveSelection();
-            d2.ShowDialog();
         }
     }
 }
