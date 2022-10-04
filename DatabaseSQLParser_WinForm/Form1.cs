@@ -1,4 +1,5 @@
 using System.Web;
+using MySql.Data.MySqlClient;
 
 namespace DatabaseSQLParser_WinForm
 {
@@ -10,6 +11,9 @@ namespace DatabaseSQLParser_WinForm
             InitializeComponent();
         }
         static string insertQuery = "INSERT INTO ";
+        static string connectionString = "datasource=127.0.0.1; port=3306; username=root; password= ; database=database_alma; sslmode=none";
+        MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+
 
         public void SQL()
         {
@@ -140,6 +144,65 @@ namespace DatabaseSQLParser_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
+        }
+
+        private void query_Click(object sender, EventArgs e)
+        {
+            string query = "INSERT INTO destination (id, utvonal) VALUES (1, 'C:');";
+
+            MySqlCommand command = new MySqlCommand(query, databaseConnection);
+
+            try
+            {
+                databaseConnection.Open(); 
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    //while(reader.Read())
+                    //{
+                    //    string[] row = {reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
+                    //    DataGridViewRow gridRow =  
+                    //}
+                }
+                databaseConnection.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void kiolvas_Click(object sender, EventArgs e)
+        {
+            string guery = "SELECT utvonal FROM destination WHERE id = 1";
+
+            MySqlCommand command =new MySqlCommand(guery, databaseConnection);
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if(reader.HasRows)
+                {
+                    while (reader.Read()) { 
+                        //Console.WriteLine(reader.GetString(0));
+                        label3.Text = reader.GetString(0);
+                    }
+
+
+                }
+                else
+                {
+                    label3.Text = "No rows found";
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

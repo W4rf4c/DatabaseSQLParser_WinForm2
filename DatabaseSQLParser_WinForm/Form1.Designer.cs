@@ -35,6 +35,11 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.query = new System.Windows.Forms.Button();
+            this.dataGridViewEmployee = new System.Windows.Forms.DataGridView();
+            this.kiolvas = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -69,7 +74,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(64, 120);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(579, 285);
+            this.richTextBox1.Size = new System.Drawing.Size(322, 222);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
@@ -99,11 +104,53 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Mappa:";
             // 
+            // query
+            // 
+            this.query.Location = new System.Drawing.Point(684, 55);
+            this.query.Name = "query";
+            this.query.Size = new System.Drawing.Size(75, 23);
+            this.query.TabIndex = 8;
+            this.query.Text = "query";
+            this.query.UseVisualStyleBackColor = true;
+            this.query.Click += new System.EventHandler(this.query_Click);
+            // 
+            // dataGridViewEmployee
+            // 
+            this.dataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmployee.Location = new System.Drawing.Point(414, 120);
+            this.dataGridViewEmployee.Name = "dataGridViewEmployee";
+            this.dataGridViewEmployee.RowTemplate.Height = 25;
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(284, 222);
+            this.dataGridViewEmployee.TabIndex = 9;
+            // 
+            // kiolvas
+            // 
+            this.kiolvas.Location = new System.Drawing.Point(721, 155);
+            this.kiolvas.Name = "kiolvas";
+            this.kiolvas.Size = new System.Drawing.Size(75, 23);
+            this.kiolvas.TabIndex = 10;
+            this.kiolvas.Text = "Kiolvas";
+            this.kiolvas.UseVisualStyleBackColor = true;
+            this.kiolvas.Click += new System.EventHandler(this.kiolvas_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(132, 383);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "label3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.kiolvas);
+            this.Controls.Add(this.dataGridViewEmployee);
+            this.Controls.Add(this.query);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
@@ -114,6 +161,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +176,9 @@
         private ComboBox comboBox2;
         private Label label1;
         private Label label2;
+        private Button query;
+        private DataGridView dataGridViewEmployee;
+        private Button kiolvas;
+        private Label label3;
     }
 }
