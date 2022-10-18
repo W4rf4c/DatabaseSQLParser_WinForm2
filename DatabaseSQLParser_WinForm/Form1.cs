@@ -83,6 +83,36 @@ namespace DatabaseSQLParser_WinForm
         private void button1_Click(object sender, EventArgs e)
         {
             SQL();
+
+            string location=comboBox1.Text;
+            cw.Text = location;
+            string guery = "INSERT INTO destination (utvonal) VALUES ('"+location+"');";
+
+            MySqlCommand command = new MySqlCommand(guery, databaseConnection);
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    //while (reader.Read())
+                    //{
+                          //Console.WriteLine(reader.GetString(0));
+                    //}
+                }
+                else
+                {
+                    Console.WriteLine("No rows found");
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
 
@@ -123,32 +153,40 @@ namespace DatabaseSQLParser_WinForm
             return a[a.Length - 2] + "SQL." + a[a.Length - 1];
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string SavedTextFile = comboBox2.Text+"Test.txt";
-
-            SQL();
-
-            //try
-            //{
-            //    StreamWriter sw = new StreamWriter(SavedTextFile);
-            //    sw.WriteLine(comboBox1.Text);
-            //    sw.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("Exception: " + ex.Message);
-            //}
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string query = "SELECT utvonal FROM destination;";
+
+            MySqlCommand command = new MySqlCommand(query, databaseConnection);
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if(reader.HasRows)
+                {
+                    while(reader.Read())
+                    {
+                        comboBox1.Items.Add(reader.GetString(0));
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("NO rows found");
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void query_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO destination (id, utvonal) VALUES (1, 'C:');";
+            string query = "SELECT * FROM destination;";
 
             MySqlCommand command = new MySqlCommand(query, databaseConnection);
 
@@ -156,13 +194,22 @@ namespace DatabaseSQLParser_WinForm
             {
                 databaseConnection.Open(); 
                 MySqlDataReader reader = command.ExecuteReader();
+                Console.WriteLine("Command executed");
+                Drives.Rows.Clear();
                 if (reader.HasRows)
                 {
-                    //while(reader.Read())
-                    //{
-                    //    string[] row = {reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
-                    //    DataGridViewRow gridRow =  
-                    //}
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1)};
+                        DataGridViewRow gridRow = (DataGridViewRow)Drives.Rows[0].Clone();
+                        gridRow.Cells[0].Value = row[0];
+                        gridRow.Cells[1].Value = row[1];
+                        Drives.Rows.Add(gridRow);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("NO rows found");
                 }
                 databaseConnection.Close();
             }
@@ -175,7 +222,7 @@ namespace DatabaseSQLParser_WinForm
 
         private void kiolvas_Click(object sender, EventArgs e)
         {
-            string guery = "SELECT utvonal FROM destination WHERE id = 1";
+            string guery = "SELECT utvonal, id FROM destination WHERE id = 1";
 
             MySqlCommand command =new MySqlCommand(guery, databaseConnection);
 
@@ -187,14 +234,39 @@ namespace DatabaseSQLParser_WinForm
                 {
                     while (reader.Read()) { 
                         //Console.WriteLine(reader.GetString(0));
-                        label3.Text = reader.GetString(0);
                     }
-
-
                 }
                 else
                 {
-                    label3.Text = "No rows found";
+                    Console.WriteLine("No rows found");
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            string location = comboBox1.Text;
+            string query = "DELETE FROM destination WHERE utvonal = '"+location+"';";
+
+            MySqlCommand command = new MySqlCommand(query, databaseConnection);
+
+            try
+            {
+                databaseConnection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected>0)
+                {
+                    cw.Text = location + " Sikeresen törölve";
+                }
+                else
+                {
+                    cw.Text = "Nincs ilyen útvonal";
                 }
                 databaseConnection.Close();
             }
