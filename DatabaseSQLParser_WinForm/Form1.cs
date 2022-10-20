@@ -11,7 +11,7 @@ namespace DatabaseSQLParser_WinForm
             InitializeComponent();
         }
         static string insertQuery = "INSERT INTO ";
-        static string connectionString = "datasource=127.0.0.1; port=3306; username=root; password= ; database=database_alma; sslmode=none";
+        static string connectionString = "datasource=127.0.0.1; port=3306; username=root; password= ; database=sql_prog; sslmode=none";
         MySqlConnection databaseConnection = new MySqlConnection(connectionString);
 
 
@@ -86,7 +86,7 @@ namespace DatabaseSQLParser_WinForm
 
             string location=comboBox1.Text;
             cw.Text = location;
-            string guery = "INSERT INTO destination (utvonal) VALUES ('"+location+"');";
+            string guery = "INSERT INTO destination_table (destination) VALUES ('"+location+"');";
 
             MySqlCommand command = new MySqlCommand(guery, databaseConnection);
 
@@ -96,10 +96,7 @@ namespace DatabaseSQLParser_WinForm
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    //while (reader.Read())
-                    //{
-                          //Console.WriteLine(reader.GetString(0));
-                    //}
+
                 }
                 else
                 {
@@ -156,7 +153,10 @@ namespace DatabaseSQLParser_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string query = "SELECT utvonal FROM destination;";
+            loginPanel login = new loginPanel();
+            login.ShowDialog();
+
+            string query = "SELECT destination FROM destination_table;";
 
             MySqlCommand command = new MySqlCommand(query, databaseConnection);
 
@@ -186,7 +186,7 @@ namespace DatabaseSQLParser_WinForm
 
         private void query_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM destination;";
+            string query = "SELECT * FROM destination_table;";
 
             MySqlCommand command = new MySqlCommand(query, databaseConnection);
 
@@ -222,7 +222,7 @@ namespace DatabaseSQLParser_WinForm
 
         private void kiolvas_Click(object sender, EventArgs e)
         {
-            string guery = "SELECT utvonal, id FROM destination WHERE id = 1";
+            string guery = "SELECT destination, id FROM destination_table WHERE id = 1";
 
             MySqlCommand command =new MySqlCommand(guery, databaseConnection);
 
@@ -232,7 +232,8 @@ namespace DatabaseSQLParser_WinForm
                 MySqlDataReader reader = command.ExecuteReader();
                 if(reader.HasRows)
                 {
-                    while (reader.Read()) { 
+                    while (reader.Read()) 
+                    { 
                         //Console.WriteLine(reader.GetString(0));
                     }
                 }
@@ -252,7 +253,7 @@ namespace DatabaseSQLParser_WinForm
         private void button_delete_Click(object sender, EventArgs e)
         {
             string location = comboBox1.Text;
-            string query = "DELETE FROM destination WHERE utvonal = '"+location+"';";
+            string query = "DELETE FROM destination_table WHERE destination = '"+location+"';";
 
             MySqlCommand command = new MySqlCommand(query, databaseConnection);
 
@@ -262,11 +263,11 @@ namespace DatabaseSQLParser_WinForm
                 int rowsAffected = command.ExecuteNonQuery();
                 if (rowsAffected>0)
                 {
-                    cw.Text = location + " Sikeresen törölve";
+                    cw.Text = location + " Deleted successfully";
                 }
                 else
                 {
-                    cw.Text = "Nincs ilyen útvonal";
+                    cw.Text = "There is no destination like this";
                 }
                 databaseConnection.Close();
             }
