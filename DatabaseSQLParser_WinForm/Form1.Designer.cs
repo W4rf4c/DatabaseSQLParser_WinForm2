@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_import = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,18 +39,19 @@
             this.kiolvas = new System.Windows.Forms.Button();
             this.cw = new System.Windows.Forms.Label();
             this.button_delete = new System.Windows.Forms.Button();
+            this.button_exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Drives)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // button_import
             // 
-            this.button1.Location = new System.Drawing.Point(398, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 27);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Beolvasás";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_import.Location = new System.Drawing.Point(398, 51);
+            this.button_import.Name = "button_import";
+            this.button_import.Size = new System.Drawing.Size(78, 27);
+            this.button_import.TabIndex = 1;
+            this.button_import.Text = "Import";
+            this.button_import.UseVisualStyleBackColor = true;
+            this.button_import.Click += new System.EventHandler(this.button_import_Click);
             // 
             // comboBox1
             // 
@@ -134,15 +135,26 @@
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(75, 23);
             this.button_delete.TabIndex = 12;
-            this.button_delete.Text = "Törlés";
+            this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = true;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // button_exit
+            // 
+            this.button_exit.Location = new System.Drawing.Point(563, 54);
+            this.button_exit.Name = "button_exit";
+            this.button_exit.Size = new System.Drawing.Size(75, 23);
+            this.button_exit.TabIndex = 13;
+            this.button_exit.Text = "Exit";
+            this.button_exit.UseVisualStyleBackColor = true;
+            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 453);
+            this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.cw);
             this.Controls.Add(this.kiolvas);
@@ -151,7 +163,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_import);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -164,7 +176,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button button_import;
         private ComboBox comboBox1;
         private RichTextBox richTextBox1;
         private Label label2;
@@ -175,5 +187,6 @@
         private DataGridViewTextBoxColumn utvonal;
         private Label cw;
         private Button button_delete;
+        private Button button_exit;
     }
 }

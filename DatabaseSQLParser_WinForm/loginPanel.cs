@@ -26,14 +26,12 @@ namespace DatabaseSQLParser_WinForm
 
         private void button_register_Click(object sender, EventArgs e)
         {   
-            
             registerPanel register = new registerPanel();
             register.ShowDialog();
         }
 
         private void loginPanel_Load(object sender, EventArgs e)
         {
-           
         }
 
         private void button_login_Click(object sender, EventArgs e)

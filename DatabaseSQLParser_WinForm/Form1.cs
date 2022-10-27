@@ -80,39 +80,6 @@ namespace DatabaseSQLParser_WinForm
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SQL();
-
-            string location=comboBox1.Text;
-            cw.Text = location;
-            string guery = "INSERT INTO destination_table (destination) VALUES ('"+location+"');";
-
-            MySqlCommand command = new MySqlCommand(guery, databaseConnection);
-
-            try
-            {
-                databaseConnection.Open();
-                MySqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-
-                }
-                else
-                {
-                    Console.WriteLine("No rows found");
-                }
-                databaseConnection.Close();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-
         //Check if varchar/int/double
         public static void CheckType(string item)
         {
@@ -153,8 +120,9 @@ namespace DatabaseSQLParser_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            string query = "SELECT destination FROM destination_table;";
+            loginPanel login = new loginPanel();
+            string username = login.
+            string query = "SELECT destination FROM destination_table INNER JOIN users ON destination_table.username=users.username WHERE username='"++";";
 
             MySqlCommand command = new MySqlCommand(query, databaseConnection);
 
@@ -274,6 +242,42 @@ namespace DatabaseSQLParser_WinForm
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button_import_Click(object sender, EventArgs e)
+        {
+            SQL();
+
+            string location = comboBox1.Text;
+            cw.Text = location;
+            string guery = "INSERT INTO destination_table (destination) VALUES ('" + location + "');";
+
+            MySqlCommand command = new MySqlCommand(guery, databaseConnection);
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+
+                }
+                else
+                {
+                    Console.WriteLine("No rows found");
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
