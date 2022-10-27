@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_register = new System.Windows.Forms.Button();
+            this.button_back = new System.Windows.Forms.Button();
+            this.button_exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,32 +41,35 @@
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // button_register
             // 
-            this.button1.Location = new System.Drawing.Point(12, 131);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_register.Location = new System.Drawing.Point(255, 20);
+            this.button_register.Name = "button_register";
+            this.button_register.Size = new System.Drawing.Size(75, 23);
+            this.button_register.TabIndex = 0;
+            this.button_register.Text = "Register";
+            this.button_register.UseVisualStyleBackColor = true;
+            this.button_register.Click += new System.EventHandler(this.button_register_Click);
             // 
-            // button2
+            // button_back
             // 
-            this.button2.Location = new System.Drawing.Point(93, 131);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_back.Location = new System.Drawing.Point(255, 49);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(75, 49);
+            this.button_back.TabIndex = 1;
+            this.button_back.Text = "Back to login";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
-            // button3
+            // button_exit
             // 
-            this.button3.Location = new System.Drawing.Point(174, 131);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_exit.Location = new System.Drawing.Point(255, 104);
+            this.button_exit.Name = "button_exit";
+            this.button_exit.Size = new System.Drawing.Size(75, 23);
+            this.button_exit.TabIndex = 2;
+            this.button_exit.Text = "Exit";
+            this.button_exit.UseVisualStyleBackColor = true;
+            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
             // label1
             // 
@@ -136,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 166);
+            this.ClientSize = new System.Drawing.Size(341, 133);
             this.Controls.Add(this.textBox_name);
             this.Controls.Add(this.textBox_r_password);
             this.Controls.Add(this.textBox_email);
@@ -145,10 +148,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_exit);
+            this.Controls.Add(this.button_back);
+            this.Controls.Add(this.button_register);
             this.Name = "registerPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "registerPanel";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,9 +161,9 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button button_register;
+        private Button button_back;
+        private Button button_exit;
         private Label label1;
         private Label label2;
         private Label label3;

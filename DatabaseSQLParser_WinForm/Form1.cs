@@ -153,8 +153,6 @@ namespace DatabaseSQLParser_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            loginPanel login = new loginPanel();
-            login.ShowDialog();
 
             string query = "SELECT destination FROM destination_table;";
 

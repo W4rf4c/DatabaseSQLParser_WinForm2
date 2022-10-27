@@ -34,6 +34,7 @@
             this.textBox_l_password = new System.Windows.Forms.TextBox();
             this.button_login = new System.Windows.Forms.Button();
             this.button_register = new System.Windows.Forms.Button();
+            this.label_write = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -88,18 +89,30 @@
             this.button_register.UseVisualStyleBackColor = true;
             this.button_register.Click += new System.EventHandler(this.button_register_Click);
             // 
+            // label_write
+            // 
+            this.label_write.AutoSize = true;
+            this.label_write.Location = new System.Drawing.Point(61, 134);
+            this.label_write.Name = "label_write";
+            this.label_write.Size = new System.Drawing.Size(12, 15);
+            this.label_write.TabIndex = 6;
+            this.label_write.Text = "-";
+            // 
             // loginPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 106);
+            this.ClientSize = new System.Drawing.Size(250, 161);
+            this.Controls.Add(this.label_write);
             this.Controls.Add(this.button_register);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_l_password);
             this.Controls.Add(this.textBox_l_username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "loginPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loginPanel";
             this.Load += new System.EventHandler(this.loginPanel_Load);
             this.ResumeLayout(false);
@@ -115,5 +128,6 @@
         private TextBox textBox_l_password;
         private Button button_login;
         private Button button_register;
+        private Label label_write;
     }
 }
