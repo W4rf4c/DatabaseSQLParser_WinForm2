@@ -13,13 +13,19 @@ namespace DatabaseSQLParser_WinForm
 {
     public partial class registerPanel : Form
     {
+
         public registerPanel()
         {
             InitializeComponent();
         }
-        
+
         static string connectionString = "datasource=127.0.0.1; port=3306; username=root; password= ; database=sql_prog; sslmode=none";
-        MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+        MySqlConnection databaseConnection;
+
+        private static void registerPanel_Load(object sender, EventArgs e)
+        {
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+        }
 
         private void button_register_Click(object sender, EventArgs e)
         {
@@ -60,5 +66,7 @@ namespace DatabaseSQLParser_WinForm
         {
             Application.Exit();
         }
+
+
     }
 }

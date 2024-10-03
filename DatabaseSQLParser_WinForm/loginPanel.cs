@@ -21,9 +21,6 @@ namespace DatabaseSQLParser_WinForm
             InitializeComponent();
         }
 
-        static string connectionString = "datasource=127.0.0.1; port=3306; username=root; password= ; database=sql_prog; sslmode=none";
-        MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-
         private void button_register_Click(object sender, EventArgs e)
         {   
             registerPanel register = new registerPanel();
@@ -32,10 +29,16 @@ namespace DatabaseSQLParser_WinForm
 
         private void loginPanel_Load(object sender, EventArgs e)
         {
+
         }
 
+        static string connectionString = "datasource=127.0.0.1; port=3306; username=root; password= ; database=sql_prog; sslmode=none";
+        
         private void button_login_Click(object sender, EventArgs e)
         {
+            
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+
             string username = textBox_l_username.Text;
             string password = textBox_l_password.Text;
             string query = "SELECT username, password FROM users WHERE username = '" + username + "' AND password = '" + password + "';";

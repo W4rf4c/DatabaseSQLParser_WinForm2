@@ -120,9 +120,8 @@ namespace DatabaseSQLParser_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            loginPanel login = new loginPanel();
-            string username = login.
-            string query = "SELECT destination FROM destination_table INNER JOIN users ON destination_table.username=users.username WHERE username='"++";";
+            string query = "SELECT destination FROM destination_table INNER JOIN users " +
+                "ON destination_table.username=users.username WHERE username='"+";";
 
             MySqlCommand command = new MySqlCommand(query, databaseConnection);
 

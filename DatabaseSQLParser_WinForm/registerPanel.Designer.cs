@@ -28,135 +28,135 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_register = new System.Windows.Forms.Button();
-            this.button_back = new System.Windows.Forms.Button();
-            this.button_exit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox_r_username = new System.Windows.Forms.TextBox();
-            this.textBox_email = new System.Windows.Forms.TextBox();
-            this.textBox_r_password = new System.Windows.Forms.TextBox();
-            this.textBox_name = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            button_register = new Button();
+            button_back = new Button();
+            button_exit = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            textBox_r_username = new TextBox();
+            textBox_email = new TextBox();
+            textBox_r_password = new TextBox();
+            textBox_name = new TextBox();
+            SuspendLayout();
             // 
             // button_register
             // 
-            this.button_register.Location = new System.Drawing.Point(255, 20);
-            this.button_register.Name = "button_register";
-            this.button_register.Size = new System.Drawing.Size(75, 23);
-            this.button_register.TabIndex = 0;
-            this.button_register.Text = "Register";
-            this.button_register.UseVisualStyleBackColor = true;
-            this.button_register.Click += new System.EventHandler(this.button_register_Click);
+            button_register.Location = new Point(255, 20);
+            button_register.Name = "button_register";
+            button_register.Size = new Size(75, 23);
+            button_register.TabIndex = 0;
+            button_register.Text = "Register";
+            button_register.UseVisualStyleBackColor = true;
+            button_register.Click += button_register_Click;
             // 
             // button_back
             // 
-            this.button_back.Location = new System.Drawing.Point(255, 49);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(75, 49);
-            this.button_back.TabIndex = 1;
-            this.button_back.Text = "Back to login";
-            this.button_back.UseVisualStyleBackColor = true;
-            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            button_back.Location = new Point(255, 49);
+            button_back.Name = "button_back";
+            button_back.Size = new Size(75, 49);
+            button_back.TabIndex = 1;
+            button_back.Text = "Back to login";
+            button_back.UseVisualStyleBackColor = true;
+            button_back.Click += button_back_Click;
             // 
             // button_exit
             // 
-            this.button_exit.Location = new System.Drawing.Point(255, 104);
-            this.button_exit.Name = "button_exit";
-            this.button_exit.Size = new System.Drawing.Size(75, 23);
-            this.button_exit.TabIndex = 2;
-            this.button_exit.Text = "Exit";
-            this.button_exit.UseVisualStyleBackColor = true;
-            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
+            button_exit.Location = new Point(255, 104);
+            button_exit.Name = "button_exit";
+            button_exit.Size = new Size(75, 23);
+            button_exit.TabIndex = 2;
+            button_exit.Text = "Exit";
+            button_exit.UseVisualStyleBackColor = true;
+            button_exit.Click += button_exit_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Username:";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Username:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Email address:";
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 49);
+            label2.Name = "label2";
+            label2.Size = new Size(82, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Email address:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Password:";
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 75);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Password:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Full name:";
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 102);
+            label4.Name = "label4";
+            label4.Size = new Size(62, 15);
+            label4.TabIndex = 6;
+            label4.Text = "Full name:";
             // 
             // textBox_r_username
             // 
-            this.textBox_r_username.Location = new System.Drawing.Point(93, 17);
-            this.textBox_r_username.Name = "textBox_r_username";
-            this.textBox_r_username.Size = new System.Drawing.Size(156, 23);
-            this.textBox_r_username.TabIndex = 7;
+            textBox_r_username.Location = new Point(93, 17);
+            textBox_r_username.Name = "textBox_r_username";
+            textBox_r_username.Size = new Size(156, 23);
+            textBox_r_username.TabIndex = 7;
             // 
             // textBox_email
             // 
-            this.textBox_email.Location = new System.Drawing.Point(93, 46);
-            this.textBox_email.Name = "textBox_email";
-            this.textBox_email.Size = new System.Drawing.Size(156, 23);
-            this.textBox_email.TabIndex = 8;
+            textBox_email.Location = new Point(93, 46);
+            textBox_email.Name = "textBox_email";
+            textBox_email.Size = new Size(156, 23);
+            textBox_email.TabIndex = 8;
             // 
             // textBox_r_password
             // 
-            this.textBox_r_password.Location = new System.Drawing.Point(93, 75);
-            this.textBox_r_password.Name = "textBox_r_password";
-            this.textBox_r_password.Size = new System.Drawing.Size(156, 23);
-            this.textBox_r_password.TabIndex = 9;
+            textBox_r_password.Location = new Point(93, 75);
+            textBox_r_password.Name = "textBox_r_password";
+            textBox_r_password.Size = new Size(156, 23);
+            textBox_r_password.TabIndex = 9;
             // 
             // textBox_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(93, 104);
-            this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(156, 23);
-            this.textBox_name.TabIndex = 10;
+            textBox_name.Location = new Point(93, 104);
+            textBox_name.Name = "textBox_name";
+            textBox_name.Size = new Size(156, 23);
+            textBox_name.TabIndex = 10;
             // 
             // registerPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 133);
-            this.Controls.Add(this.textBox_name);
-            this.Controls.Add(this.textBox_r_password);
-            this.Controls.Add(this.textBox_email);
-            this.Controls.Add(this.textBox_r_username);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button_exit);
-            this.Controls.Add(this.button_back);
-            this.Controls.Add(this.button_register);
-            this.Name = "registerPanel";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "registerPanel";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(341, 133);
+            Controls.Add(textBox_name);
+            Controls.Add(textBox_r_password);
+            Controls.Add(textBox_email);
+            Controls.Add(textBox_r_username);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(button_exit);
+            Controls.Add(button_back);
+            Controls.Add(button_register);
+            Name = "registerPanel";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "registerPanel";
+            Load += registerPanel_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
